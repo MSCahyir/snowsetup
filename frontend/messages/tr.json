@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Snowboard Ekipman Önerici - Boy, Kilo ve Tecrübeye Göre Snowboard Seçimi",
+    "description": "Boyunuza, kilonuza ve tecrübenize göre en uygun snowboard, bot ve binding önerileri alın. Ücretsiz snowboard boyutu hesaplama ve ekipman seçim rehberi.",
+    "keywords": "snowboard boyutu hesaplama, snowboard seçimi, snowboard önerisi, snowboard calculator, snowboard size chart, snowboard binding seçimi, snowboard boot seçimi"
+  },
+  "nav": {
+    "calculator": "Hesaplayıcı",
+    "products": "Ürünler",
+    "blog": "Blog",
+    "guides": "Rehberler",
+    "about": "Hakkımızda",
+    "calculateEquipment": "Ekipman Hesapla"
+  },
+  "hero": {
+    "badge": "2024-2025 Sezonu için Güncel",
+    "title": "Mükemmel",
+    "titleHighlight": "Snowboard",
+    "titleEnd": "Ekipmanını Bul",
+    "description": "Boy, kilo ve tecrübene göre kişiselleştirilmiş snowboard, bot ve binding önerileri al.",
+    "free": "Ücretsiz",
+    "andFast": "ve hızlı!",
+    "calculateBtn": "Ekipman Hesapla",
+    "browseGuides": "Rehberleri İncele",
+    "stats": {
+      "users": "Kullanıcı",
+      "equipment": "Ekipman",
+      "satisfaction": "Memnuniyet"
+    }
+  },
+  "features": {
+    "badge": "Özellikler",
+    "title": "Neden SnowSetup?",
+    "description": "Doğru ekipman seçimi, pistteki performansınızı ve güvenliğinizi doğrudan etkiler. Size yardımcı olacak araçlarımızı keşfedin.",
+    "items": {
+      "smartCalculation": {
+        "title": "Akıllı Hesaplama",
+        "description": "Boy, kilo, tecrübe ve stil tercihlerinize göre bilimsel algoritmalarla ideal ekipman boyutunu belirleyin."
+      },
+      "personalizedRecommendations": {
+        "title": "Kişiselleştirilmiş Öneriler",
+        "description": "Her kayakçı benzersizdir. Size özel marka ve model önerileri ile tam uyum sağlayın."
+      },
+      "priceComparison": {
+        "title": "Fiyat Karşılaştırma",
+        "description": "En iyi fiyatları bulun. Farklı mağazalardan fiyat karşılaştırması yapın ve tasarruf edin."
+      },
+      "detailedGuides": {
+        "title": "Detaylı Rehberler",
+        "description": "Yeni başlayanlardan uzmanlara kadar herkes için hazırlanmış kapsamlı snowboard rehberleri."
+      },
+      "trustedReviews": {
+        "title": "Güvenilir İncelemeler",
+        "description": "Gerçek kullanıcı yorumları ve uzman değerlendirmeleriyle doğru kararlar verin."
+      },
+      "fastResults": {
+        "title": "Hızlı Sonuçlar",
+        "description": "Saniyeler içinde size özel ekipman önerileri alın. Zaman kaybetmeyin, piste çıkın!"
+      }
+    }
+  },
+  "calculator": {
+    "badge": "Hesaplayıcı",
+    "title": "Ekipman Boyutu Hesapla",
+    "description": "Boy, kilo, tecrübe ve stil tercihlerinizi girin. Size özel snowboard, bot ve binding önerileri alın.",
+    "trustText": "Bu araç genel öneriler sunar. En doğru seçim için profesyonel bir mağazada deneme yapmanızı öneririz."
+  },
+  "form": {
+    "physicalInfo": "Fiziksel Bilgiler",
+    "height": "Boy",
+    "heightPlaceholder": "örn: 175",
+    "weight": "Kilo",
+    "weightPlaceholder": "örn: 75",
+    "bootSize": "Ayakkabı Numarası (EU)",
+    "bootSizePlaceholder": "örn: 42",
+    "gender": "Cinsiyet",
+    "selectGender": "Cinsiyet seçin",
+    "male": "Erkek",
+    "female": "Kadın",
+    "experienceStyle": "Tecrübe & Stil",
+    "experienceLevel": "Tecrübe Seviyesi",
+    "selectExperience": "Tecrübe seviyesi seçin",
+    "ridingStyle": "Kayak Stili",
+    "selectStyle": "Kayak stili seçin",
+    "budget": "Bütçe (Opsiyonel)",
+    "maxBudget": "Maksimum Bütçe",
+    "budgetPlaceholder": "örn: 1500",
+    "getRecommendations": "Önerileri Al",
+    "loading": "Yükleniyor...",
+    "experiences": {
+      "beginner": "Başlangıç",
+      "intermediate": "Orta",
+      "advanced": "İleri",
+      "expert": "Uzman"
+    },
+    "styles": {
+      "allMountain": "All-Mountain",
+      "freestyle": "Freestyle / Park",
+      "freeride": "Freeride",
+      "powder": "Powder",
+      "carving": "Carving"
+    },
+    "styleDescriptions": {
+      "allMountain": "Her yerde kullanım - pist, kar, park",
+      "freestyle": "Park, jump, trick ve rail",
+      "freeride": "Derin kar, off-piste, backcountry",
+      "powder": "Toz kar, derin kar",
+      "carving": "Pist kayağı, hız ve keskin dönüşler"
+    },
+    "experienceDescriptions": {
+      "beginner": "İlk sezonu veya birkaç gün deneyimli",
+      "intermediate": "Temel teknikleri biliyor, mavi pistlerde rahat",
+      "advanced": "Tüm pistlerde rahat, park deneyimi var",
+      "expert": "Her koşulda kayabiliyor, trick yapabiliyor"
+    }
+  },
+  "products": {
+    "badge": "Ürünler",
+    "title": "Öne Çıkan Ekipmanlar",
+    "description": "En popüler ve en çok önerilen snowboard ekipmanları. Kaliteli markalar, uygun fiyatlar.",
+    "allProducts": "Tüm Ürünler",
+    "reviews": "yorum",
+    "discount": "İndirim",
+    "badges": {
+      "bestSeller": "En Çok Satan",
+      "editorChoice": "Editörün Seçimi",
+      "new": "Yeni"
+    },
+    "trustBadges": "Güvenilir Markaların Yetkili Satıcıları"
+  },
+  "blog": {
+    "badge": "Blog",
+    "title": "Snowboard Rehberleri & İncelemeler",
+    "description": "Uzman görüşleri, ürün incelemeleri ve başlangıç rehberleriyle snowboard dünyasını keşfedin.",
+    "allPosts": "Tüm Yazılar",
+    "readMore": "Devamını Oku",
+    "readTime": "okuma",
+    "posts": {
+      "sizeGuide": {
+        "title": "Snowboard Boyutu Nasıl Seçilir? Kapsamlı Rehber",
+        "excerpt": "Doğru snowboard boyutu seçimi, pistteki performansınızı doğrudan etkiler. Bu rehberde boy, kilo ve stil tercihlerinize göre ideal board boyutunu..."
+      },
+      "beginnerBoards": {
+        "title": "2025 Yeni Başlayanlar İçin En İyi 10 Snowboard",
+        "excerpt": "Snowboard maceranıza başlamak için doğru ekipman şart. İşte bu sezon yeni başlayanlar için en iyi 10 snowboard ve özellikleri..."
+      },
+      "bindingGuide": {
+        "title": "Snowboard Binding Seçimi: Bilmeniz Gereken Her Şey",
+        "excerpt": "Binding, board ile botunuz arasındaki kritik bağlantıdır. Flex, açı ayarları ve uyumluluk hakkında tüm detaylar..."
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Snowboard Dünyasından Haberdar Ol",
+    "description": "Yeni ürün incelemeleri, indirim fırsatları ve sezon öncesi ipuçları için haftalık bültenimize abone olun.",
+    "noSpam": "Spam yok, sadece değer!",
+    "placeholder": "E-posta adresiniz",
+    "subscribe": "Abone Ol",
+    "success": "Teşekkürler! Bültenimize başarıyla abone oldunuz.",
+    "trust": "10.000+ snowboardcu bültenimizi takip ediyor"
+  },
+  "footer": {
+    "description": "Doğru snowboard ekipmanını bulmak hiç bu kadar kolay olmamıştı. \n Ücretsiz hesaplayıcımız ve uzman rehberlerimizle pistte fark yaratın.",
+    "calculators": {
+      "title": "Hesaplayıcılar",
+      "boardSize": "Snowboard Boyutu",
+      "bootSize": "Bot Numarası",
+      "bindingSelection": "Binding Seçimi",
+      "completeSet": "Komple Set"
+    },
+    "guides": {
+      "title": "Rehberler",
+      "beginners": "Yeni Başlayanlar",
+      "snowboardSelection": "Snowboard Seçimi",
+      "bindingGuide": "Binding Rehberi",
+      "bootGuide": "Bot Rehberi"
+    },
+    "resources": {
+      "title": "Kaynaklar",
+      "blog": "Blog",
+      "productReviews": "Ürün İncelemeleri",
+      "resorts": "Kayak Merkezleri",
+      "faq": "SSS"
+    },
+    "company": {
+      "title": "Hakkımızda",
+      "whoWeAre": "Biz Kimiz",
+      "contact": "İletişim",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Koşulları"
+    },
+    "copyright": "Tüm hakları saklıdır.",
+    "affiliate": "Affiliate bağlantıları aracılığıyla yapılan satışlardan komisyon kazanabiliriz."
+  },
+  "about": {
+    "badge": "Hakkımızda",
+    "title": "Biz Kimiz",
+    "subtitle": "Size mükemmel ekipmanı bulmanıza yardımcı olmak için tutkuyla çalışan bir snowboardcu ekibiyiz.",
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "Her snowboardcunun uzman düzeyinde ekipman önerilerine erişim hakkı olduğuna inanıyoruz. Misyonumuz, her seviyeden kayakçıya ücretsiz, doğru ve kişiselleştirilmiş öneriler sunarak snowboard ekipman seçimini demokratikleştirmektir."
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "description": "Ekibimiz, snowboard'u daha erişilebilir kılma konusunda tutkulu deneyimli snowboardcular, veri bilimciler ve yazılım mühendislerinden oluşmaktadır."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "accuracy": {
+        "title": "Doğruluk",
+        "description": "En doğru önerileri sunmak için bilimsel algoritmalar ve gerçek dünya verileri kullanıyoruz."
+      },
+      "transparency": {
+        "title": "Şeffaflık",
+        "description": "Nasıl para kazandığımız konusunda açığız ve bunun önerilerimizi etkilemesine asla izin vermiyoruz."
+      },
+      "community": {
+        "title": "Topluluk",
+        "description": "Birbirlerine mükemmel ekipmanı bulmalarında yardımcı olan bir snowboardcu topluluğu oluşturuyoruz."
+      }
+    }
+  },
+  "guides": {
+    "badge": "Rehberler",
+    "title": "Snowboard Rehberleri & Eğitimler",
+    "description": "Ekipman seçiminden ileri tekniklere kadar snowboard hakkında bilmeniz gereken her şey.",
+    "categories": {
+      "equipment": "Ekipman Rehberleri",
+      "technique": "Teknik Rehberler",
+      "maintenance": "Bakım & Onarım"
+    }
+  },
+  "common": {
+    "learnMore": "Daha Fazla Bilgi",
+    "viewAll": "Tümünü Gör",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "tryAgain": "Tekrar Dene"
+  }
+}

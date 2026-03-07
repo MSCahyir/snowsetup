@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "title": "Snowboard Equipment Recommender - Board Selection by Height, Weight & Experience",
+    "description": "Get personalized snowboard, boot, and binding recommendations based on your height, weight, and experience. Free snowboard size calculator and equipment selection guide.",
+    "keywords": "snowboard size calculator, snowboard selection, snowboard recommendation, snowboard calculator, snowboard size chart, snowboard binding selection, snowboard boot selection"
+  },
+  "nav": {
+    "calculator": "Calculator",
+    "products": "Products",
+    "blog": "Blog",
+    "guides": "Guides",
+    "about": "About",
+    "calculateEquipment": "Calculate Equipment"
+  },
+  "hero": {
+    "badge": "Updated for 2024-2025 Season",
+    "title": "Find Your Perfect",
+    "titleHighlight": "Snowboard",
+    "titleEnd": "Equipment",
+    "description": "Get personalized snowboard, boot, and binding recommendations based on your height, weight, and experience.",
+    "free": "Free",
+    "andFast": "and fast!",
+    "calculateBtn": "Calculate Equipment",
+    "browseGuides": "Browse Guides",
+    "stats": {
+      "users": "Users",
+      "equipment": "Equipment",
+      "satisfaction": "Satisfaction"
+    }
+  },
+  "features": {
+    "badge": "Features",
+    "title": "Why SnowSetup?",
+    "description": "The right equipment selection directly affects your performance and safety on the slopes. Discover our tools to help you.",
+    "items": {
+      "smartCalculation": {
+        "title": "Smart Calculation",
+        "description": "Determine the ideal equipment size with scientific algorithms based on your height, weight, experience, and style preferences."
+      },
+      "personalizedRecommendations": {
+        "title": "Personalized Recommendations",
+        "description": "Every rider is unique. Get brand and model recommendations tailored specifically to you."
+      },
+      "priceComparison": {
+        "title": "Price Comparison",
+        "description": "Find the best prices. Compare prices from different stores and save money."
+      },
+      "detailedGuides": {
+        "title": "Detailed Guides",
+        "description": "Comprehensive snowboard guides prepared for everyone from beginners to experts."
+      },
+      "trustedReviews": {
+        "title": "Trusted Reviews",
+        "description": "Make the right decisions with real user reviews and expert evaluations."
+      },
+      "fastResults": {
+        "title": "Fast Results",
+        "description": "Get personalized equipment recommendations in seconds. Don't waste time, hit the slopes!"
+      }
+    }
+  },
+  "calculator": {
+    "badge": "Calculator",
+    "title": "Calculate Equipment Size",
+    "description": "Enter your height, weight, experience, and style preferences. Get personalized snowboard, boot, and binding recommendations.",
+    "trustText": "This tool provides general recommendations. For the most accurate selection, we recommend trying equipment at a professional store."
+  },
+  "form": {
+    "physicalInfo": "Physical Information",
+    "height": "Height",
+    "heightPlaceholder": "e.g., 175",
+    "weight": "Weight",
+    "weightPlaceholder": "e.g., 75",
+    "bootSize": "Boot Size (EU)",
+    "bootSizePlaceholder": "e.g., 42",
+    "gender": "Gender",
+    "selectGender": "Select gender",
+    "male": "Male",
+    "female": "Female",
+    "experienceStyle": "Experience & Style",
+    "experienceLevel": "Experience Level",
+    "selectExperience": "Select experience level",
+    "ridingStyle": "Riding Style",
+    "selectStyle": "Select riding style",
+    "budget": "Budget (Optional)",
+    "maxBudget": "Max Budget",
+    "budgetPlaceholder": "e.g., 1500",
+    "getRecommendations": "Get Recommendations",
+    "loading": "Loading...",
+    "experiences": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced",
+      "expert": "Expert"
+    },
+    "styles": {
+      "allMountain": "All-Mountain",
+      "freestyle": "Freestyle / Park",
+      "freeride": "Freeride",
+      "powder": "Powder",
+      "carving": "Carving"
+    },
+    "styleDescriptions": {
+      "allMountain": "Versatile use - groomed runs, powder, park",
+      "freestyle": "Park, jumps, tricks and rails",
+      "freeride": "Deep snow, off-piste, backcountry",
+      "powder": "Powder snow, deep snow",
+      "carving": "Groomed runs, speed and sharp turns"
+    },
+    "experienceDescriptions": {
+      "beginner": "First season or a few days of experience",
+      "intermediate": "Knows basic techniques, comfortable on blue runs",
+      "advanced": "Comfortable on all runs, has park experience",
+      "expert": "Can ride in any conditions, can do tricks"
+    }
+  },
+  "products": {
+    "badge": "Products",
+    "title": "Featured Equipment",
+    "description": "Most popular and recommended snowboard equipment. Quality brands, affordable prices.",
+    "allProducts": "All Products",
+    "reviews": "reviews",
+    "discount": "Off",
+    "badges": {
+      "bestSeller": "Best Seller",
+      "editorChoice": "Editor's Choice",
+      "new": "New"
+    },
+    "trustBadges": "Authorized Dealers of Trusted Brands"
+  },
+  "blog": {
+    "badge": "Blog",
+    "title": "Snowboard Guides & Reviews",
+    "description": "Explore the world of snowboarding with expert opinions, product reviews, and beginner guides.",
+    "allPosts": "All Posts",
+    "readMore": "Read More",
+    "readTime": "read",
+    "posts": {
+      "sizeGuide": {
+        "title": "How to Choose Snowboard Size? Comprehensive Guide",
+        "excerpt": "The right snowboard size selection directly affects your performance on the slopes. In this guide, we'll help you find the ideal board size based on your height, weight, and style preferences..."
+      },
+      "beginnerBoards": {
+        "title": "Top 10 Best Snowboards for Beginners 2025",
+        "excerpt": "Starting your snowboard adventure requires the right equipment. Here are the 10 best snowboards for beginners this season and their features..."
+      },
+      "bindingGuide": {
+        "title": "Snowboard Binding Selection: Everything You Need to Know",
+        "excerpt": "The binding is the critical connection between your board and boots. All the details about flex, angle adjustments, and compatibility..."
+      }
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated from the Snowboard World",
+    "description": "Subscribe to our weekly newsletter for new product reviews, discount opportunities, and pre-season tips.",
+    "noSpam": "No spam, only value!",
+    "placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "success": "Thank you! You have successfully subscribed to our newsletter.",
+    "trust": "10,000+ snowboarders follow our newsletter"
+  },
+  "footer": {
+    "description": "Finding the right snowboard equipment has never been easier. Make a difference on the slopes with our free calculator and expert guides.",
+    "calculators": {
+      "title": "Calculators",
+      "boardSize": "Snowboard Size",
+      "bootSize": "Boot Size",
+      "bindingSelection": "Binding Selection",
+      "completeSet": "Complete Set"
+    },
+    "guides": {
+      "title": "Guides",
+      "beginners": "Beginners",
+      "snowboardSelection": "Snowboard Selection",
+      "bindingGuide": "Binding Guide",
+      "bootGuide": "Boot Guide"
+    },
+    "resources": {
+      "title": "Resources",
+      "blog": "Blog",
+      "productReviews": "Product Reviews",
+      "resorts": "Ski Resorts",
+      "faq": "FAQ"
+    },
+    "company": {
+      "title": "About Us",
+      "whoWeAre": "Who We Are",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Use"
+    },
+    "copyright": "All rights reserved.",
+    "affiliate": "We may earn a commission from sales made through affiliate links."
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Who We Are",
+    "subtitle": "We're a team of passionate snowboarders dedicated to helping you find the perfect equipment.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "We believe that every snowboarder deserves access to expert-level equipment recommendations. Our mission is to democratize snowboard equipment selection by providing free, accurate, and personalized recommendations to riders of all levels."
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Our team consists of experienced snowboarders, data scientists, and software engineers who are passionate about making snowboarding more accessible."
+    },
+    "values": {
+      "title": "Our Values",
+      "accuracy": {
+        "title": "Accuracy",
+        "description": "We use scientific algorithms and real-world data to provide the most accurate recommendations."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "We're upfront about how we make money and never let it influence our recommendations."
+      },
+      "community": {
+        "title": "Community",
+        "description": "We're building a community of snowboarders who help each other find the perfect gear."
+      }
+    }
+  },
+  "guides": {
+    "badge": "Guides",
+    "title": "Snowboard Guides & Tutorials",
+    "description": "Everything you need to know about snowboarding, from equipment selection to advanced techniques.",
+    "categories": {
+      "equipment": "Equipment Guides",
+      "technique": "Technique Guides",
+      "maintenance": "Maintenance & Care"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again"
+  }
+}
