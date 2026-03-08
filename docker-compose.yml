@@ -1,0 +1,59 @@
+services:
+  backend:
+    container_name: snowsetup-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      Cors__AllowedOrigins__0: https://snowsetup.com
+      Cors__AllowedOrigins__1: https://www.snowsetup.com
+    expose:
+      - "8080"
+    networks:
+      - snowsetup
+
+  frontend:
+    container_name: snowsetup-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: https://api.snowsetup.com
+        NEXT_PUBLIC_SITE_URL: https://snowsetup.com
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOSTNAME: 0.0.0.0
+      PORT: 3000
+    expose:
+      - "3000"
+    networks:
+      - snowsetup
+
+  caddy:
+    container_name: snowsetup-caddy
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - snowsetup
+
+networks:
+  snowsetup:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -6,7 +6,7 @@ Boyunuza, kilonuza ve tecrübenize göre kişiselleştirilmiş snowboard, bot ve
 
 - **Backend**: .NET 8 Minimal API
 - **Frontend**: Next.js 14 + TypeScript + Tailwind CSS
-- **Hosting**: Vercel (Frontend) + Railway (Backend)
+- **Hosting**: Google Cloud VM + Docker Compose + Caddy
 
 ## Proje Yapısı
 
@@ -25,7 +25,11 @@ snowboard/
 │   │   ├── components/     # UI components
 │   │   ├── lib/            # API client
 │   │   └── types/          # TypeScript types
-│   └── .env.local
+│   ├── .env.local
+│   └── Dockerfile
+├── deploy/
+│   └── Caddyfile
+├── docker-compose.yml
 └── .github/workflows/       # CI/CD
 ```
 
@@ -160,30 +164,54 @@ Tecrübe seviyelerini listele.
 
 ## Deployment
 
-### Backend (Railway)
+### VM Üzerinde Çalıştırma
 
-1. Railway hesabı oluştur: https://railway.app
-2. GitHub repo'sunu bağla
-3. `backend` klasörünü root directory olarak ayarla
-4. Environment variables:
-   - `ASPNETCORE_ENVIRONMENT=Production`
-   - `CORS_ORIGINS=https://your-vercel-domain.vercel.app`
+```bash
+cd ~/snowsetup
+git pull --ff-only origin main
+docker compose up -d --build
+docker compose ps
+```
 
-### Frontend (Vercel)
+### GCP Firewall (zorunlu)
 
-1. Vercel hesabı oluştur: https://vercel.com
-2. GitHub repo'sunu bağla
-3. `frontend` klasörünü root directory olarak ayarla
-4. Environment variables:
-   - `NEXT_PUBLIC_API_URL=https://your-railway-domain.railway.app`
-   - `NEXT_PUBLIC_SITE_URL=https://your-vercel-domain.vercel.app`
+Let's Encrypt doğrulaması ve dış erişim için `80/443` inbound açık olmalı.
+
+```bash
+NET=$(gcloud compute instances describe snow-setup \
+  --zone=us-west1-b \
+  --format='get(networkInterfaces[0].network.basename())')
+
+gcloud compute firewall-rules create allow-snowsetup-web \
+  --network="$NET" \
+  --direction=INGRESS \
+  --priority=1000 \
+  --action=ALLOW \
+  --rules=tcp:80,tcp:443 \
+  --source-ranges=0.0.0.0/0
+```
+
+Kural zaten varsa:
+
+```bash
+gcloud compute firewall-rules update allow-snowsetup-web \
+  --rules=tcp:80,tcp:443 \
+  --source-ranges=0.0.0.0/0
+```
 
 ## CI/CD
 
 GitHub Actions workflows:
 
-- **backend-ci.yml**: Build, test, Railway'e deploy
-- **frontend-ci.yml**: Lint, type-check, build (Vercel otomatik deploy)
+- **backend-ci.yml**: .NET restore/build/test
+- **frontend-ci.yml**: Lint, type-check, build
+- **deploy-vm.yml**: `main` push sonrası VM'e SSH ile bağlanıp `docker compose up -d --build` çalıştırır
+
+`deploy-vm.yml` için GitHub repo secrets:
+
+- `VM_HOST`: VM dış IP adresi
+- `VM_USER`: SSH kullanıcı adı (ornek: `m_cahyir2018`)
+- `VM_SSH_KEY`: VM'e erişen private key (PEM formatı)
 
 ## Lisans
 
