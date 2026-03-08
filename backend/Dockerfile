@@ -2,12 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy solution and project files
-COPY Snowboard.Calculator.sln ./
+# Copy project file first to maximize restore layer caching.
 COPY src/Snowboard.Calculator.Api/Snowboard.Calculator.Api.csproj ./src/Snowboard.Calculator.Api/
 
 # Restore dependencies
-RUN dotnet restore
+RUN dotnet restore src/Snowboard.Calculator.Api/Snowboard.Calculator.Api.csproj
 
 # Copy source code
 COPY . .
