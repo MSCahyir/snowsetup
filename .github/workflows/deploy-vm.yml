@@ -36,6 +36,7 @@ jobs:
           script: |
             set -e
             cd ~/snowsetup
+            git stash push -u -m "pre-deploy-${GITHUB_SHA}" || true
             git fetch origin main
             git checkout main
             git pull --ff-only origin main
