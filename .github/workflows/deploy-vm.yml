@@ -40,6 +40,23 @@ jobs:
             git fetch origin main
             git checkout main
             git pull --ff-only origin main
+
+            echo "== Disk before cleanup =="
+            df -h
+            docker system df || true
+
+            # Prevent build failures caused by exhausted VM disk.
+            docker builder prune -af || true
+            docker image prune -af || true
+            docker container prune -f || true
+
+            echo "== Disk after cleanup =="
+            df -h
+            docker system df || true
+
             docker compose up -d --build --remove-orphans
             docker compose ps
             docker compose logs --tail=80 caddy | grep -Ei "certificate obtained|obtaining certificate|acme|error|failed" || true
+
+            # Keep VM disk healthy between deployments.
+            docker image prune -af || true
