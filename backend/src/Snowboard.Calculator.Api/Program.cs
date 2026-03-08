@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container
 builder.Services.AddScoped<IRecommendationService, RecommendationService>();
 builder.Services.AddSingleton<IProductService, ProductService>();
-builder.Services.AddOpenApi();
 
 // Configure JSON serialization with enum string converter
 builder.Services.ConfigureHttpJsonOptions(options =>
@@ -36,7 +35,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
