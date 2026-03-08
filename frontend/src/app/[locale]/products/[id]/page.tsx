@@ -13,10 +13,11 @@ export default async function ProductDetailPage({ params }: Props) {
   const { locale, id } = await params;
   setRequestLocale(locale);
 
-  try {
-    const product = await productApi.getProductById(id);
-    return <ProductDetailContent product={product} locale={locale} />;
-  } catch {
+  const product = await productApi.getProductById(id).catch(() => null);
+
+  if (!product) {
     notFound();
   }
+
+  return <ProductDetailContent product={product} locale={locale} />;
 }
