@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n/config';
 import Navbar from "@/components/Navbar";
@@ -15,6 +16,7 @@ const inter = Inter({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://snowsetup.com";
+const GA_ID = "G-G65EEZM4H4";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -104,7 +106,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({ children, params }: Readonly<Props>) {
   const { locale } = await params;
 
   if (!locales.includes(locale as Locale)) {
@@ -119,6 +121,18 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale}>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <main>{children}</main>
