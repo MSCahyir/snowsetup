@@ -17,6 +17,7 @@ const inter = Inter({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://snowsetup.com";
 const GA_ID = "G-G65EEZM4H4";
+const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -85,6 +86,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: descriptions[locale as Locale] || descriptions.tr,
       images: ["/og-image.png"],
     },
+    verification: GOOGLE_SITE_VERIFICATION
+      ? {
+          google: GOOGLE_SITE_VERIFICATION,
+        }
+      : undefined,
     robots: {
       index: true,
       follow: true,

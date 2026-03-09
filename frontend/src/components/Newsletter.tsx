@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Newsletter() {
   const t = useTranslations('newsletter');
@@ -11,13 +12,28 @@ export default function Newsletter() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    // In production, this would be an actual API call
-    setStatus('success');
-    setEmail('');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Newsletter request failed');
+      }
+
+      setStatus('success');
+      trackEvent('newsletter_submit', {
+        placement: 'homepage_newsletter',
+      });
+      setEmail('');
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -80,6 +96,15 @@ export default function Newsletter() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <span>{t('success')}</span>
+          </div>
+        )}
+
+        {status === 'error' && (
+          <div className="mt-4 inline-flex items-center gap-2 text-red-400">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span>{t('error')}</span>
           </div>
         )}
 

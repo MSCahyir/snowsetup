@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const locales = ['tr', 'en'];
-  const corePaths = ['', '/products', '/blog', '/guides', '/about', '/calculator', '/contact', '/privacy', '/terms'];
+  const corePaths = ['', '/products', '/blog', '/guides', '/about', '/calculator', '/snowboard-boyu-hesaplama', '/boot-size-converter', '/contact', '/privacy', '/terms'];
 
   const blogSlugs = {
     tr: [

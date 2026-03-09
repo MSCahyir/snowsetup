@@ -3,7 +3,8 @@
 import { Product } from '@/lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 interface ProductDetailContentProps {
   product: Product;
@@ -30,6 +31,16 @@ export default function ProductDetailContent({ product, locale }: ProductDetailC
   };
 
   const categoryDisplay = categoryNames[product.category]?.[locale as 'tr' | 'en'] || product.category;
+
+  useEffect(() => {
+    trackEvent('view_product_detail', {
+      product_id: product.id,
+      product_name: product.name,
+      category: product.category,
+      price: product.price,
+      locale,
+    });
+  }, [locale, product.category, product.id, product.name, product.price]);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 pt-20 lg:pt-24">
@@ -201,6 +212,15 @@ export default function ProductDetailContent({ product, locale }: ProductDetailC
                   href={product.affiliateUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent('affiliate_click', {
+                      product_id: product.id,
+                      product_name: product.name,
+                      category: product.category,
+                      affiliate_url: product.affiliateUrl,
+                      locale,
+                    })
+                  }
                   className="block w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-4 px-6 rounded-xl text-center hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-cyan-500/30"
                 >
                   {locale === 'tr' ? 'Satın Al' : 'Buy Now'}

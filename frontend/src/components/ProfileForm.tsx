@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { UserProfile, RidingStyle, ExperienceLevel, Gender, RecommendationResponse } from '@/types';
 import { getRecommendations } from '@/lib/calculatorApi';
+import { trackEvent } from '@/lib/analytics';
 import RecommendationResults from './RecommendationResults';
 
 const ridingStyleKeys: { value: RidingStyle; labelKey: string; descKey: string }[] = [
@@ -45,6 +46,12 @@ export default function ProfileForm() {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
+
+    trackEvent('start_recommendation', {
+      experience: formData.experience,
+      preferred_style: formData.preferredStyle,
+      has_budget: maxBudget !== undefined,
+    });
 
     try {
       const response = await getRecommendations({

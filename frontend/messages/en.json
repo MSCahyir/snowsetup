@@ -157,6 +157,7 @@
     "placeholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "Thank you! You have successfully subscribed to our newsletter.",
+    "error": "Subscription failed. Please try again.",
     "trust": "10,000+ snowboarders follow our newsletter"
   },
   "footer": {

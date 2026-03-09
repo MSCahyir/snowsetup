@@ -1,0 +1,168 @@
+SNOWSETUP - SITE + SEO + GROWTH TODO
+Created: 2026-03-08
+
+HOW TO USE
+- [ ] = not started
+- [~] = in progress
+- [x] = done
+- Priority: P0 (critical), P1 (important), P2 (nice-to-have)
+
+==================================================
+P0 - THIS WEEK (traffic + conversion impact)
+==================================================
+
+[x] P0-1 Add event tracking (GA4) end-to-end
+    Files:
+    - frontend/src/components/ProfileForm.tsx
+    - frontend/src/components/RecommendationResults.tsx
+    - frontend/src/components/pages/ProductDetailContent.tsx
+    Events:
+    - start_recommendation
+    - complete_recommendation
+    - view_product_detail
+    - affiliate_click
+    - newsletter_submit
+    Success criteria:
+    - Events visible in GA4 Realtime within 1-2 minutes
+
+[x] P0-2 Add page-level metadata for money pages
+    Pages:
+    - /[locale]/products
+    - /[locale]/products/[id]
+    - /[locale]/blog
+    - /[locale]/blog/[slug]
+    - /[locale]/guides
+    - /[locale]/guides/[slug]
+    Success criteria:
+    - Unique title/description/canonical on each page
+
+[x] P0-3 Add structured data where missing
+    - Product schema on product detail
+    - Article/BlogPosting schema on blog detail
+    - FAQ schema on calculator landing page
+    Existing:
+    - Home has WebApplication schema (keep + improve)
+
+[x] P0-4 Build SEO utility landing page: snowboard size calculator
+    Route proposal:
+    - /[locale]/snowboard-boyu-hesaplama
+    Content:
+    - Quick calculator + FAQ + CTA to full recommendation flow
+    Success criteria:
+    - Indexable page with schema + internal links
+
+[x] P0-5 Build SEO utility landing page: boot size converter
+    Route proposal:
+    - /[locale]/boot-size-converter
+    Content:
+    - EU/US/CM conversion tool + buying tips + CTA
+
+[~] P0-6 Replace fake newsletter submit with real integration
+    File:
+    - frontend/src/components/Newsletter.tsx
+    Options:
+    - Resend / Mailchimp / ConvertKit
+    Success criteria:
+    - New emails persisted in real provider
+
+[~] P0-7 Search Console operations
+    - Verify property
+    - Submit sitemap.xml
+    - Request indexing for new landing pages
+
+==================================================
+P1 - THIS MONTH (scale + content engine)
+==================================================
+
+[ ] P1-1 Move blog and guide content out of hardcoded TS
+    Current hardcoded files:
+    - frontend/src/lib/blogData.ts
+    - frontend/src/lib/guideData.ts
+    Target:
+    - MDX or CMS-based content pipeline
+
+[ ] P1-2 Content cadence (minimum)
+    - Publish 2 posts/week
+    - 1 how-to + 1 comparison post
+    - Every post links to calculator + products
+
+[ ] P1-3 Programmatic SEO pages
+    - style x level x weight-range templates
+    Examples:
+    - /tr/guide/intermediate-all-mountain-board-size
+    - /en/guide/beginner-freestyle-board-size
+
+[ ] P1-4 Internal linking audit
+    - Home -> Calculator -> Results -> Product pages
+    - Blog/Guides -> Calculator -> Product detail
+    - Add breadcrumbs where missing
+
+[ ] P1-5 Conversion UX improvements
+    - Shareable recommendation URL/card
+    - Compare 2 products feature
+    - Sticky CTA on long content pages
+
+==================================================
+P2 - HARDENING / QUALITY
+==================================================
+
+[ ] P2-1 Improve image performance
+    - Replace remaining <img> with next/image in key pages
+    - Optimize product image loading priorities
+
+[ ] P2-2 Review and tune Core Web Vitals
+    - LCP on homepage and products pages
+    - CLS fixes on dynamic sections
+
+[ ] P2-3 Author + trust signals (E-E-A-T)
+    - Add author profile blocks to content pages
+    - Add methodology/source section on recommendation logic
+
+[ ] P2-4 Multi-language SEO quality pass
+    - Validate hreflang consistency
+    - Verify translated metadata quality
+
+==================================================
+DATA REALITY CHECK (keep visible)
+==================================================
+
+[ ] D-1 Product data quality
+    Source now:
+    - backend/src/Snowboard.Calculator.Api/Data/products.json
+    Notes:
+    - Product content is static JSON (not live feed)
+    - Keep freshness update plan (weekly/monthly)
+
+[ ] D-2 Recommendation quality validation
+    File:
+    - backend/src/Snowboard.Calculator.Api/Services/RecommendationService.cs
+    Notes:
+    - Some inference/fallback rules are heuristic
+    - Run periodic recommendation QA on real user profiles
+
+==================================================
+WEEKLY KPI CHECKLIST
+==================================================
+
+[ ] Organic clicks (Google Search Console)
+[ ] Impressions for calculator/size intent keywords
+[ ] CTR by top 20 queries
+[ ] Recommendation completion rate (GA4)
+[ ] Affiliate click-through rate
+[ ] Newsletter signup rate
+
+==================================================
+TOP 5 KEYWORDS TO TARGET FIRST
+==================================================
+
+1) snowboard boyu hesaplama
+2) snowboard öneri aracı
+3) snowboard bot numarası nasıl seçilir
+4) freestyle vs freeride farkı
+5) yeni başlayan snowboard seti
+
+==================================================
+NOTES
+==================================================
+- Deploy and analytics foundation are now in place.
+- Next growth unlock = utility landing pages + event tracking + content cadence.

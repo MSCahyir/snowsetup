@@ -157,6 +157,7 @@
     "placeholder": "E-posta adresiniz",
     "subscribe": "Abone Ol",
     "success": "Teşekkürler! Bültenimize başarıyla abone oldunuz.",
+    "error": "Abonelik başarısız oldu. Lütfen tekrar deneyin.",
     "trust": "10.000+ snowboardcu bültenimizi takip ediyor"
   },
   "footer": {

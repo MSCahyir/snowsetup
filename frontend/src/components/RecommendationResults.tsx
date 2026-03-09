@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { RecommendationResponse, EquipmentRecommendation } from '@/types';
+import { trackEvent } from '@/lib/analytics';
 
 interface RecommendationResultsProps {
   results: RecommendationResponse;
@@ -11,6 +13,15 @@ export default function RecommendationResults({ results, onBack }: Readonly<Reco
   const bestScore = bestSet
     ? ((bestSet.snowboard.matchScore + bestSet.boot.matchScore + bestSet.binding.matchScore) / 3).toFixed(0)
     : '0';
+
+  useEffect(() => {
+    trackEvent('complete_recommendation', {
+      recommendation_count: recommendations.length,
+      has_tips: recommendations[0]?.tips?.length ? true : false,
+      experience: profile.experience,
+      preferred_style: profile.preferredStyle,
+    });
+  }, [profile.experience, profile.preferredStyle, recommendations]);
 
   return (
     <div className="space-y-6 md:space-y-8">
