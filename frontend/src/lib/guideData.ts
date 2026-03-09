@@ -735,8 +735,21 @@ A short end-of-season routine prevents rust, dryness, and setup issues.
 ];
 
 export function getGuideArticle(slug: string, locale: string): GuideArticle | undefined {
-  const articles = locale === 'en' ? guidesEn : guidesTr;
-  return articles.find((article) => article.slug === slug);
+  const primaryArticles = locale === 'en' ? guidesEn : guidesTr;
+  const secondaryArticles = locale === 'en' ? guidesTr : guidesEn;
+
+  const directMatch = primaryArticles.find((article) => article.slug === slug);
+  if (directMatch) {
+    return directMatch;
+  }
+
+  // Fallback for locale switches when the slug belongs to the other language.
+  const crossLocaleMatch = secondaryArticles.find((article) => article.slug === slug);
+  if (!crossLocaleMatch) {
+    return undefined;
+  }
+
+  return primaryArticles.find((article) => article.id === crossLocaleMatch.id) ?? crossLocaleMatch;
 }
 
 export function getAllGuideArticles(locale: string): GuideArticle[] {

@@ -3,9 +3,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Calendar, Clock, User, Tag } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import type { BlogPost } from '@/lib/blogData';
+import MarkdownArticle from '@/components/MarkdownArticle';
 
 interface BlogPostContentProps {
   post: BlogPost;
@@ -13,12 +12,11 @@ interface BlogPostContentProps {
 }
 
 function slugify(value: string): string {
-  const filtered = Array.from(value.toLowerCase())
-    .filter((char) => (char >= 'a' && char <= 'z') || (char >= '0' && char <= '9') || char === ' ' || char === '-')
-    .join('')
-    .trim();
-
-  return filtered.split(/\s+/).join('-');
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
 }
 
 export default function BlogPostContent({ post, locale }: Readonly<BlogPostContentProps>) {
@@ -134,11 +132,7 @@ export default function BlogPostContent({ post, locale }: Readonly<BlogPostConte
             id="blog-article-content"
             className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur p-6 sm:p-8 lg:p-10"
           >
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-200 prose-a:text-cyan-300 prose-strong:text-white prose-code:bg-slate-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-blockquote:border-cyan-400 prose-blockquote:text-slate-300 prose-th:border prose-th:border-slate-600 prose-th:bg-slate-800 prose-td:border prose-td:border-slate-700">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {post.content}
-              </ReactMarkdown>
-            </div>
+            <MarkdownArticle content={post.content} />
           </article>
 
           <aside className="space-y-4 lg:sticky lg:top-28 h-fit">
@@ -150,7 +144,9 @@ export default function BlogPostContent({ post, locale }: Readonly<BlogPostConte
                 <ul className="space-y-2">
                   {headings.map((heading) => (
                     <li key={heading}>
-                      <span className="text-sm text-slate-300">{heading}</span>
+                      <a href={`#${slugify(heading)}`} className="text-sm text-slate-300 hover:text-cyan-300 transition-colors">
+                        {heading}
+                      </a>
                     </li>
                   ))}
                 </ul>

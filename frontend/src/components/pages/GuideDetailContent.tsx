@@ -3,9 +3,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Tag } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import type { GuideArticle } from '@/lib/guideData';
+import MarkdownArticle from '@/components/MarkdownArticle';
 
 interface GuideDetailContentProps {
   article: GuideArticle;
@@ -19,12 +18,11 @@ const categoryLabels: Record<string, { tr: string; en: string }> = {
 };
 
 function slugify(value: string): string {
-  const filtered = Array.from(value.toLowerCase())
-    .filter((char) => (char >= 'a' && char <= 'z') || (char >= '0' && char <= '9') || char === ' ' || char === '-')
-    .join('')
-    .trim();
-
-  return filtered.split(/\s+/).join('-');
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
 }
 
 export default function GuideDetailContent({ article, locale }: Readonly<GuideDetailContentProps>) {
@@ -103,11 +101,7 @@ export default function GuideDetailContent({ article, locale }: Readonly<GuideDe
             id="guide-article-content"
             className="rounded-2xl border border-white/10 bg-slate-900/70 backdrop-blur p-6 sm:p-8 lg:p-10"
           >
-            <div className="prose prose-invert prose-lg prose-slate max-w-none prose-headings:text-white prose-p:text-slate-200 prose-strong:text-white prose-a:text-cyan-300 prose-th:border prose-th:border-slate-600 prose-th:bg-slate-800 prose-td:border prose-td:border-slate-700 prose-code:bg-slate-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-blockquote:border-cyan-400 prose-blockquote:text-slate-300">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {article.content}
-              </ReactMarkdown>
-            </div>
+            <MarkdownArticle content={article.content} />
           </article>
 
           <aside className="space-y-4 lg:sticky lg:top-28 h-fit">
@@ -119,7 +113,9 @@ export default function GuideDetailContent({ article, locale }: Readonly<GuideDe
                 <ul className="space-y-2">
                   {headings.map((heading) => (
                     <li key={heading}>
-                      <span className="text-sm text-slate-300">{heading}</span>
+                      <a href={`#${slugify(heading)}`} className="text-sm text-slate-300 hover:text-cyan-300 transition-colors">
+                        {heading}
+                      </a>
                     </li>
                   ))}
                 </ul>

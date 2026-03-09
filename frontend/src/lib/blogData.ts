@@ -865,8 +865,21 @@ Regular maintenance maximizes your board's performance and lifespan!
 ];
 
 export function getBlogPost(slug: string, locale: string): BlogPost | undefined {
-  const posts = locale === 'en' ? blogPostsEn : blogPostsTr;
-  return posts.find(post => post.slug === slug);
+  const primaryPosts = locale === 'en' ? blogPostsEn : blogPostsTr;
+  const secondaryPosts = locale === 'en' ? blogPostsTr : blogPostsEn;
+
+  const directMatch = primaryPosts.find((post) => post.slug === slug);
+  if (directMatch) {
+    return directMatch;
+  }
+
+  // Fallback for locale switches when the slug belongs to the other language.
+  const crossLocaleMatch = secondaryPosts.find((post) => post.slug === slug);
+  if (!crossLocaleMatch) {
+    return undefined;
+  }
+
+  return primaryPosts.find((post) => post.id === crossLocaleMatch.id) ?? crossLocaleMatch;
 }
 
 export function getAllBlogPosts(locale: string): BlogPost[] {
