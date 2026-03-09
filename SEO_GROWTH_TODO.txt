@@ -65,7 +65,7 @@ P0 - THIS WEEK (traffic + conversion impact)
     Success criteria:
     - New emails persisted in real provider
 
-[~] P0-7 Search Console operations
+[x] P0-7 Search Console operations
     - Verify property
     - Submit sitemap.xml
     - Request indexing for new landing pages
